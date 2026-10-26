@@ -99,15 +99,27 @@ try {
     foreach ($cmd in @('Install.cmd','Restore.cmd')) { [IO.File]::Copy((Join-Path $PSScriptRoot $cmd),(Join-Path $package $cmd)) }
     [IO.File]::Copy($installer,(Join-Path $package 'Installer.ps1'))
     $env:GARAGE_RU_NO_PAUSE='1'
-    Push-Location -LiteralPath $package
-    try {
-        & .\Install.cmd -GamePath $game -NoGui
-        Assert ($LASTEXITCODE -eq 0) "Install.cmd failed with code $LASTEXITCODE"
-        Assert-State patched
-        & .\Restore.cmd -GamePath $game -NoGui
-        Assert ($LASTEXITCODE -eq 0) "Restore.cmd failed with code $LASTEXITCODE"
-        Assert-State original
-    } finally { Pop-Location }
+    foreach ($name in @('Install.cmd','Restore.cmd')) {
+        $start=New-Object Diagnostics.ProcessStartInfo
+        $start.FileName=$env:ComSpec
+        $start.WorkingDirectory=$package
+        $start.UseShellExecute=$false
+        $start.CreateNoWindow=$true
+        $start.RedirectStandardOutput=$true
+        $start.RedirectStandardError=$true
+        $start.StandardOutputEncoding=New-Object Text.UTF8Encoding($false)
+        $start.StandardErrorEncoding=New-Object Text.UTF8Encoding($false)
+        $start.Arguments='/d /s /c ""'+(Join-Path $package $name)+'" -GamePath "'+$game+'" -NoGui"'
+        $started=[Diagnostics.Process]::Start($start)
+        $output=$started.StandardOutput.ReadToEnd()
+        $errors=$started.StandardError.ReadToEnd()
+        $started.WaitForExit()
+        Write-Host $output
+        if ($errors) { Write-Host $errors }
+        Assert ($started.ExitCode -eq 0) "$name failed with code $($started.ExitCode)"
+        $started.Dispose()
+        if ($name -eq 'Install.cmd') { Assert-State patched } else { Assert-State original }
+    }
     Write-Host 'PASS: .cmd entry points work from Cyrillic folders with spaces and brackets'
 
     # Untrusted manifest entries may not escape the resource directory.

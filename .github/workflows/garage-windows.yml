@@ -47,7 +47,7 @@ jobs:
           $extracted = Join-Path $download 'Распакованный архив []'
           Expand-Archive -LiteralPath $archive.FullName -DestinationPath $extracted
           $package = Get-ChildItem -LiteralPath $extracted -Directory | Select-Object -First 1
-          & powershell.exe -NoProfile -ExecutionPolicy Bypass -File (Join-Path $package.FullName 'Installer.ps1') -Action CheckPackage
+          & powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\tools\garage-windows\Installer.ps1 -Action CheckPackage -PackageRoot $package.FullName
           if ($LASTEXITCODE -ne 0) { throw 'Release payload validation failed' }
           foreach ($name in @('Installer.ps1','Install.cmd','Restore.cmd')) {
             $inArchive = (Get-FileHash -LiteralPath (Join-Path $package.FullName $name) -Algorithm SHA256).Hash
