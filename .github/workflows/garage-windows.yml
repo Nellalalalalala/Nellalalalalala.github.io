@@ -49,6 +49,11 @@ jobs:
           $package = Get-ChildItem -LiteralPath $extracted -Directory | Select-Object -First 1
           & powershell.exe -NoProfile -ExecutionPolicy Bypass -File (Join-Path $package.FullName 'Installer.ps1') -Action CheckPackage
           if ($LASTEXITCODE -ne 0) { throw 'Release payload validation failed' }
+          foreach ($name in @('Installer.ps1','Install.cmd','Restore.cmd')) {
+            $inArchive = (Get-FileHash -LiteralPath (Join-Path $package.FullName $name) -Algorithm SHA256).Hash
+            $testedSource = (Get-FileHash -LiteralPath (Join-Path '.\tools\garage-windows' $name) -Algorithm SHA256).Hash
+            if ($inArchive -ne $testedSource) { throw "Archive contains a different installer: $name" }
+          }
           $bad = Get-ChildItem -LiteralPath $package.FullName -Recurse -File | Where-Object { $_.Extension -in @('.exe','.dll','.sh','.py','.so') }
           if ($bad) { throw 'Unexpected executable or environment-dependent file in archive' }
           Write-Host 'PASS: actual release extracted and all payload hashes verified on Windows'
