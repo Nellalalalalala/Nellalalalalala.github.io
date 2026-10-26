@@ -68,12 +68,20 @@ function Write-AtomicFile([string]$Source, [string]$Destination) {
     $directory = [IO.Path]::GetDirectoryName($Destination)
     [void][IO.Directory]::CreateDirectory($directory)
     $temporary = Join-Path $directory ('.garage-ru-' + [Guid]::NewGuid().ToString('N') + '.tmp')
+    $previous = $temporary + '.previous'
     try {
         [IO.File]::Copy($Source, $temporary, $false)
-        # Both files are on the same volume; Replace leaves no half-written asset.
-        [IO.File]::Replace($temporary, $Destination, $null)
+        # Use a real backup path: Windows PowerShell 5.1 can bind $null as an
+        # empty string when calling the .NET Framework File.Replace overload.
+        if ([IO.File]::Exists($Destination)) {
+            [IO.File]::Replace($temporary, $Destination, $previous)
+        } else { [IO.File]::Move($temporary, $Destination) }
     } finally {
         if ([IO.File]::Exists($temporary)) { [IO.File]::Delete($temporary) }
+        if ([IO.File]::Exists($previous)) {
+            if (-not [IO.File]::Exists($Destination)) { [IO.File]::Move($previous, $Destination) }
+            else { [IO.File]::Delete($previous) }
+        }
     }
 }
 
