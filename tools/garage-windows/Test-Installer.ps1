@@ -99,11 +99,21 @@ try {
     foreach ($cmd in @('Install.cmd','Restore.cmd')) { [IO.File]::Copy((Join-Path $PSScriptRoot $cmd),(Join-Path $package $cmd)) }
     [IO.File]::Copy($installer,(Join-Path $package 'Installer.ps1'))
     $env:GARAGE_RU_NO_PAUSE='1'
-    & $env:ComSpec /d /c ('""'+(Join-Path $package 'Install.cmd')+'" -GamePath "'+$game+'" -NoGui"')
-    Assert ($LASTEXITCODE -eq 0) 'Install.cmd failed'
+    $start=New-Object Diagnostics.ProcessStartInfo
+    $start.FileName=$env:ComSpec
+    $start.UseShellExecute=$false
+    $start.CreateNoWindow=$true
+    $start.Arguments='/d /s /c ""'+(Join-Path $package 'Install.cmd')+'" -GamePath "'+$game+'" -NoGui"'
+    $started=[Diagnostics.Process]::Start($start)
+    $started.WaitForExit()
+    Assert ($started.ExitCode -eq 0) 'Install.cmd failed'
+    $started.Dispose()
     Assert-State patched
-    & $env:ComSpec /d /c ('""'+(Join-Path $package 'Restore.cmd')+'" -GamePath "'+$game+'" -NoGui"')
-    Assert ($LASTEXITCODE -eq 0) 'Restore.cmd failed'
+    $start.Arguments='/d /s /c ""'+(Join-Path $package 'Restore.cmd')+'" -GamePath "'+$game+'" -NoGui"'
+    $started=[Diagnostics.Process]::Start($start)
+    $started.WaitForExit()
+    Assert ($started.ExitCode -eq 0) 'Restore.cmd failed'
+    $started.Dispose()
     Assert-State original
     Write-Host 'PASS: .cmd entry points work from Cyrillic folders with spaces and brackets'
 
