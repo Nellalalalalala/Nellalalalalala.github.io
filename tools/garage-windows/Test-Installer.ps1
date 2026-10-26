@@ -99,22 +99,15 @@ try {
     foreach ($cmd in @('Install.cmd','Restore.cmd')) { [IO.File]::Copy((Join-Path $PSScriptRoot $cmd),(Join-Path $package $cmd)) }
     [IO.File]::Copy($installer,(Join-Path $package 'Installer.ps1'))
     $env:GARAGE_RU_NO_PAUSE='1'
-    $start=New-Object Diagnostics.ProcessStartInfo
-    $start.FileName=$env:ComSpec
-    $start.UseShellExecute=$false
-    $start.CreateNoWindow=$true
-    $start.Arguments='/d /s /c ""'+(Join-Path $package 'Install.cmd')+'" -GamePath "'+$game+'" -NoGui"'
-    $started=[Diagnostics.Process]::Start($start)
-    $started.WaitForExit()
-    Assert ($started.ExitCode -eq 0) 'Install.cmd failed'
-    $started.Dispose()
-    Assert-State patched
-    $start.Arguments='/d /s /c ""'+(Join-Path $package 'Restore.cmd')+'" -GamePath "'+$game+'" -NoGui"'
-    $started=[Diagnostics.Process]::Start($start)
-    $started.WaitForExit()
-    Assert ($started.ExitCode -eq 0) 'Restore.cmd failed'
-    $started.Dispose()
-    Assert-State original
+    Push-Location -LiteralPath $package
+    try {
+        & .\Install.cmd -GamePath $game -NoGui
+        Assert ($LASTEXITCODE -eq 0) "Install.cmd failed with code $LASTEXITCODE"
+        Assert-State patched
+        & .\Restore.cmd -GamePath $game -NoGui
+        Assert ($LASTEXITCODE -eq 0) "Restore.cmd failed with code $LASTEXITCODE"
+        Assert-State original
+    } finally { Pop-Location }
     Write-Host 'PASS: .cmd entry points work from Cyrillic folders with spaces and brackets'
 
     # Untrusted manifest entries may not escape the resource directory.
