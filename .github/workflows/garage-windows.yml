@@ -1,0 +1,54 @@
+name: Garage — Windows installer checks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/garage-windows/**'
+      - '.github/workflows/garage-windows.yml'
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Draft or public release whose Windows ZIP should be checked
+        required: true
+        default: garage-ru-v1.0.0
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Test Windows PowerShell 5.1 and double-click installers
+        shell: powershell
+        run: |
+          $ErrorActionPreference = 'Stop'
+          if ($PSVersionTable.PSVersion.Major -ne 5) { throw 'Expected inbox Windows PowerShell 5.1' }
+          & .\tools\garage-windows\Test-Installer.ps1
+      - name: Check actual release archive on Windows
+        if: github.event_name == 'workflow_dispatch'
+        shell: powershell
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.release_tag }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $download = Join-Path $env:RUNNER_TEMP 'garage-release'
+          New-Item -ItemType Directory -Path $download | Out-Null
+          gh release download $env:RELEASE_TAG --repo $env:GITHUB_REPOSITORY --dir $download --pattern '*.zip' --pattern '*.sha256'
+          if ($LASTEXITCODE -ne 0) { throw 'Could not download release archive' }
+          $archive = Get-ChildItem -LiteralPath $download -Filter '*.zip' | Select-Object -First 1
+          $checksum = Get-ChildItem -LiteralPath $download -Filter '*.sha256' | Select-Object -First 1
+          $expected = (Get-Content -LiteralPath $checksum.FullName -Raw).Split(' ')[0].Trim()
+          $actual = (Get-FileHash -LiteralPath $archive.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
+          if ($actual -ne $expected) { throw 'Release checksum mismatch' }
+          $extracted = Join-Path $download 'Распакованный архив []'
+          Expand-Archive -LiteralPath $archive.FullName -DestinationPath $extracted
+          $package = Get-ChildItem -LiteralPath $extracted -Directory | Select-Object -First 1
+          & powershell.exe -NoProfile -ExecutionPolicy Bypass -File (Join-Path $package.FullName 'Installer.ps1') -Action CheckPackage
+          if ($LASTEXITCODE -ne 0) { throw 'Release payload validation failed' }
+          $bad = Get-ChildItem -LiteralPath $package.FullName -Recurse -File | Where-Object { $_.Extension -in @('.exe','.dll','.sh','.py','.so') }
+          if ($bad) { throw 'Unexpected executable or environment-dependent file in archive' }
+          Write-Host 'PASS: actual release extracted and all payload hashes verified on Windows'

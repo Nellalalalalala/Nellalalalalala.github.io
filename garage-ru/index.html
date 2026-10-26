@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GARAGE — русский перевод для Windows · Nell</title>
+  <meta name="description" content="Русский перевод GARAGE: Bad Dream Adventure для Steam 1.270. Скачать архив, установить на Windows 10/11 и при необходимости вернуть оригинал.">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <header><a class="brand" href="../">NELL</a><nav aria-label="Разделы"><a href="#install">Установка</a><a href="#restore">Удаление</a><a href="#details">О переводе</a></nav></header>
+  <main>
+    <section class="hero">
+      <div class="eyebrow">Русский перевод · версия 1.0.0</div>
+      <h1>GARAGE:<br>Bad Dream Adventure</h1>
+      <p class="lead">Диалоги, письма и устройство чужого мира — на русском. С сохранением пауз, выбора ответов и постепенного появления букв.</p>
+      <div class="meta"><span>Windows 10 / 11</span><span>Steam · игра 1.270</span><span>Build 20618823</span></div>
+    </section>
+    <section class="card" aria-label="Скачать перевод">
+      <h2>Архив для установленной игры</h2>
+      <p>Внутри — готовые файлы перевода, установщик, возврат оригинала и инструкция. Игра в архив не входит.</p>
+      <div class="download"><a class="button" href="https://github.com/Nellalalalalala/Nellalalalalala.github.io/releases/download/garage-ru-v1.0.0/garage-ru-1.0.0-windows.zip">Скачать перевод <span aria-hidden="true">↓</span></a><span class="small" id="archive-size">ZIP · 34.4 МБ · Windows</span></div>
+      <p class="small"><a href="INSTALL.md">Полная инструкция</a> · <a href="https://github.com/Nellalalalalala/Nellalalalalala.github.io/releases/tag/garage-ru-v1.0.0">Версия и файлы релиза</a> · <a href="https://github.com/Nellalalalalala/Nellalalalalala.github.io/releases/download/garage-ru-v1.0.0/garage-ru-1.0.0-windows.sha256">SHA-256</a></p>
+      <p class="small">Нужна Steam-версия 1.270, build 20618823. Установщик проверяет совместимость до замены файлов.</p>
+    </section>
+    <div class="grid">
+      <section class="card" id="install"><h2>Как установить</h2><ol><li>Закройте игру и полностью распакуйте ZIP в отдельную папку.</li><li>Откройте <code>Install.cmd</code>. Если игра не найдена автоматически, выберите папку с <code>Garage.exe</code>.</li><li>Дождитесь сообщения об успешной установке.</li><li>Запустите игру через Steam и выберите язык <strong>«Русский»</strong>.</li></ol><p class="notice">Если игра была открыта во время установки, перезапустите её: уже загруженные окна используют старые файлы.</p></section>
+      <section class="card"><h2>Без дополнительных программ</h2><p>Установка использует Windows PowerShell 5.1, который уже есть в Windows 10 и 11.</p><p>Python, Linux, WSL, Proton и Wine не нужны. В пакете нет подменённых DLL или загрузчиков модов.</p><p>Меняются только ресурсы игры. Установщик не меняет сохранения, реестр или исполняемые файлы.</p></section>
+    </div>
+    <section class="text-section" id="restore"><h2>Как вернуть оригинал</h2><p>Закройте игру и откройте <code>Restore.cmd</code> из распакованного пакета. Оригинальные файлы хранятся рядом с игрой в <code>Garage_RU_Backup\20618823\</code>. Не удаляйте эту папку до удаления перевода.</p><p>Повторная установка сохраняет резервную копию. После обновления игры в Steam может понадобиться перевод для новой сборки.</p></section>
+    <section class="text-section" id="details"><h2>Что переведено</h2><p>3007 текстовых записей: диалоги, повествование, документы, предметы, описания, достижения и интерфейс. У 35 плакатов русский текст показывается рядом с оригинальным изображением. Длинные стартовые подсказки подстраиваются под размер окна.</p><p>Перевод создан ИИ с контекстной редактурой и сверкой с японским текстом. Возможные философские и литературные отсылки проверялись по источникам и русской традиции перевода. Это не работа переводчика-человека.</p><p>Название на логотипе и имена в титрах сохранены. Декоративные надписи в рисунках окружения и видео не перерисованы; стёртый текст не восстанавливался по догадке. <a href="TRANSLATION_NOTES.md">Редакторские решения и источники →</a></p></section>
+    <section class="text-section"><h2>Если что-то не получилось</h2><details><summary>Установщик не находит игру</summary><p>В Steam откройте свойства Garage → «Установленные файлы» → «Обзор». В установщике укажите эту папку: в ней должны лежать <code>Garage.exe</code> и <code>Garage_Data</code>.</p></details><details><summary>Написано «Другая версия»</summary><p>Пакет рассчитан на build 20618823. При другой сборке или изменённых файлах установка останавливается. Проверка файлов Steam возвращает текущую официальную версию игры, но не устанавливает старую 1.270.</p></details><details><summary>Подсказки всё ещё обрезаются</summary><p>Полностью закройте игру после установки, затем запустите её заново через Steam. Старый процесс сохраняет прежнюю разметку в памяти.</p></details><details><summary>Где посмотреть проверку Windows</summary><p>Установщик проверяется на Windows с Windows PowerShell 5.1: установка, повторная установка, откат, кириллица в путях и отмена изменений при ошибке записи. Архив также распаковывается и проверяется на Windows. <a href="https://github.com/Nellalalalalala/Nellalalalalala.github.io/actions/workflows/garage-windows.yml">Результаты проверок →</a></p></details></section>
+  </main>
+  <footer><a href="../">Все проекты</a><a href="https://github.com/Nellalalalalala/Nellalalalalala.github.io">Исходники страницы и установщика</a> Неофициальная локализация · Nell · 2026</footer>
+</body>
+</html>
