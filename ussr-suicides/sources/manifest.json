@@ -1,0 +1,23 @@
+{
+  "reviewed": "2026-11-14",
+  "algorithm": "SHA-256",
+  "files": {
+    "data/input.json": "872cb2be2947f2ee2d712ef8df0052fbefa334a353db627b5e3fe855d870400c",
+    "data/annual.json": "51da4ca0027a944d4bd7ebf2d90be606b00853081a700bcbee002b9fed019350",
+    "data/annual.csv": "27bed7a7b28ba74fa5c1a06dfcb2fdfd96a71f3dac66f5f412973537aa4ebfe8",
+    "data/summary.json": "47d1e2cd067eb5fcaaee9546e408fa33a273c3075b3f4b1c9a1c0990c22b1dfd",
+    "data/urban-transcription.csv": "954eb5f65981e0455623df76a6cb798daec08f41c05006840d7afb5ae550899d",
+    "recalculate.py": "9f0e840ec5616e3d6c1412fbf02bc36b72bdabba19a276fc830dd3caf79734a8",
+    "build_page.py": "c5ad78de3d2d7dfe3a30fcf1cd8df9e92d3336165d631268dbc955be404541c5",
+    "index.template.html": "b37cd1a085d55eee249835c400fe4ae942ccd05ff0713d72a4d95d1a7aa89686",
+    "index.html": "1f68c91dbfa3a9c5debfb31504f2f19a466bd093d7caab27b61cf230f174c0d9",
+    "methodology.md": "7f96928fee1aaa71970e73309c9df2fb79c41cf4c2e1fb62686c77c3f737147b",
+    "style.css": "207813ad1b9182dd43f71662085de278f925f880a9d2e0f91eb064a711ed8b4c",
+    "app.js": "9ff7357e9acf5f4b35443da239c8e0ee72b508f9bad35086487265b2615137c3",
+    "sources/tsu-1928-social-anomalies.pdf": "38933b74b280ac0267e8beddb60ce1cbf149c96626207dc846aecdfce29f9058",
+    "sources/tsu-table-37.jpg": "4175ff40371dbf773b8c638ce80df564c83e232e13a47c970c9d5e9e3c32daa5",
+    "sources/rgae-urban-1945-1954.jpg": "4fd0e06a2168bd34c25a3c623ea0cb105454ee621400333ca940cc13082a5484",
+    "fonts/Oswald.ttf": "5b38c246e255a12f5712d640d56bcced0472466fc68983d2d0410ec0457c2817",
+    "fonts/OFL-Oswald.txt": "0fd731a904b729a4e02eaf5e8ebd06783edd9abe400e8882760160230675b652"
+  }
+}

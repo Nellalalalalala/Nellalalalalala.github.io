@@ -2,6 +2,14 @@
 
 https://nellalalalalala.github.io/
 
+Самоубийства в СССР, 1922–1991: источники и воспроизводимый расчёт:
+https://nellalalalalala.github.io/ussr-suicides/
+
+Данные, библиография, методика и скрипты — `ussr-suicides/`.
+Полный итог не установлен; опубликованные и расчётные частичные суммы
+отмечены отдельно. Пересчитать: `python3 ussr-suicides/recalculate.py`.
+Пересобрать страницу и контрольные суммы: `python3 ussr-suicides/build_page.py`.
+
 Русский перевод GARAGE: Bad Dream Adventure:
 https://nellalalalalala.github.io/garage-ru/
 
