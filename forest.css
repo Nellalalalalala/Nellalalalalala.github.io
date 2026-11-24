@@ -1,0 +1,50 @@
+/* Primary Forest & Gold palette approved from the standalone experiment. */
+:root:not([data-theme=light]){--paper:#1b2716;--bg:#1b2716;--surface:#22301c;--soft:#2b3820;--ink:#e1cdac;--muted:#bca985;--line:#535d3d;--green:#e1cdac;--accent:#e1cdac;--accent-soft:#3b4527;--red:#d8c3a1;--warning:#e1cdac;--warning-bg:#434325;--gold:#e1cdac;--gold-ink:#e1cdac;--dot:rgba(225,205,172,.2);color-scheme:dark}
+:root:not([data-theme=light]),:root:not([data-theme=light]) body,:root:not([data-theme=light]) body:not(:has(.app-shell)),:root:not([data-theme=light]) .loader,:root:not([data-theme=light]) .chapter-prelude{background-color:var(--paper);background-image:radial-gradient(circle,rgba(225,205,172,.38) .65px,transparent .95px)}
+:root:not([data-theme=light]) .topbar,:root:not([data-theme=light]) .controls{background:var(--paper)}
+:root:not([data-theme=light]) .topbar{border:1px solid var(--line)}
+:root:not([data-theme=light]) .botanical-film,:root:not([data-theme=light]) .matrix-life-film,:root:not([data-theme=light]) .people-illustration,:root:not([data-theme=light]) .hero-loop,:root:not([data-theme=light]) .welcome-art{background:var(--paper)}
+:root:not([data-theme=light]) .botanical-film>video,:root:not([data-theme=light]) .chapter-prelude>video,:root:not([data-theme=light]) .matrix-life-film>video,:root:not([data-theme=light]) .hero-loop>video,:root:not([data-theme=light]) .welcome-art>video{mix-blend-mode:normal;filter:brightness(1.012) url(#forest-film)}
+:root:not([data-theme=light]) .brand-mark img,:root:not([data-theme=light]) .loader-center>img,:root:not([data-theme=light]) .closing-logo img,:root:not([data-theme=light]) .matrix-icon,:root:not([data-theme=light]) .signal-plant img,:root:not([data-theme=light]) .transfer-source img,:root:not([data-theme=light]) .plan-technology>img,:root:not([data-theme=light]) .phone-screen img{filter:url(#forest-ink)}
+:root:not([data-theme=light]) .identity-definitions p,:root:not([data-theme=light]) .identity-definitions .eyebrow,:root:not([data-theme=light]) .prelude-meta,:root:not([data-theme=light]) .prelude-bottom,:root:not([data-theme=light]) .prelude-bottom button,:root:not([data-theme=light]) .film-corner,:root:not([data-theme=light]) .phone-tabs button,:root:not([data-theme=light]) .phone-tabs .active,:root:not([data-theme=light]) .demo-steps .active,:root:not([data-theme=light]) .context-inputs,:root:not([data-theme=light]) .system-task b,:root:not([data-theme=light]) .technical-list b{color:var(--ink)}
+:root:not([data-theme=light]) .prelude-bottom>button,:root:not([data-theme=light]) .prelude-rule,:root:not([data-theme=light]) .scene-replay,:root:not([data-theme=light]) .text-button,:root:not([data-theme=light]) .context-inputs span,:root:not([data-theme=light]) .technical-list>div,:root:not([data-theme=light]) .comparison-row,:root:not([data-theme=light]) .cost-lines>div,:root:not([data-theme=light]) .calculation>div,:root:not([data-theme=light]) .position-strip,:root:not([data-theme=light]) .business-loop,:root:not([data-theme=light]) .business-chips span,:root:not([data-theme=light]) .comparison-head,:root:not([data-theme=light]) .market-foot,:root:not([data-theme=light]) .people-answer{border-color:var(--line)}
+:root:not([data-theme=light]) .prelude-rule{background:var(--gold)}
+:root:not([data-theme=light]) .step-dot,:root:not([data-theme=light]) .film-status i{background:var(--gold)}
+:root:not([data-theme=light]) .phone{background:var(--surface);border-color:var(--gold);box-shadow:inset 0 0 0 5px var(--soft),0 24px 55px #0a100b40}
+:root:not([data-theme=light]) .phone:before{border-color:var(--line)}
+:root:not([data-theme=light]) .phone-tabs{background:var(--surface)}
+:root:not([data-theme=light]) .loader-orbit,:root:not([data-theme=light]) .profile-avatar,:root:not([data-theme=light]) .connect-ring>span,:root:not([data-theme=light]) .find-orbit>span,:root:not([data-theme=light]) .context-core>div,:root:not([data-theme=light]) .hardware-panel,:root:not([data-theme=light]) .system-grid,:root:not([data-theme=light]) .signal-point,:root:not([data-theme=light]) .transfer-target{border-color:var(--line)}
+:root:not([data-theme=light]) .signal-scan,:root:not([data-theme=light]) .context-core:after,:root:not([data-theme=light]) .transfer-stream i,:root:not([data-theme=light]) .hardware-led{background:var(--gold)}
+:root:not([data-theme=light]) .context-chart path{stroke:var(--gold)}
+:root:not([data-theme=light]) .context-inputs span,:root:not([data-theme=light]) .system-task,:root:not([data-theme=light]) .transfer-target,:root:not([data-theme=light]) .hardware-case{background:var(--surface)}
+:root:not([data-theme=light]) .system-grid{opacity:.17}
+:root:not([data-theme=light]) .app-qr{background:#e1cdac}
+:root:not([data-theme=light]) .app-qr svg>rect{fill:#e1cdac}
+:root:not([data-theme=light]) .app-qr svg>path{fill:#1b2716}
+:root:not([data-theme=light]) dialog{background:var(--surface);color:var(--ink)}
+:root:not([data-theme=light]) dialog::backdrop{background:#10190edd}
+:root:not([data-theme=light]) .source-item a,:root:not([data-theme=light]) .source-item strong{color:var(--ink)}
+:root:not([data-theme=light]) .source-item p{color:var(--muted)}
+:root:not([data-theme=light]) .primary:hover,:root:not([data-theme=light]) .paging #nextButton:hover,:root:not([data-theme=light]) .app-button:hover{background:#c9b38f;color:var(--paper);border-color:#c9b38f}
+:root:not([data-theme=light]) .secondary:hover{background:var(--soft);color:var(--ink)}
+:root:not([data-theme=light]) .primary .matrix-icon,:root:not([data-theme=light]) .app-button .matrix-icon,:root:not([data-theme=light]) .paging #nextButton .matrix-icon{filter:url(#forest-dark)}
+:root:not([data-theme=light]) .chart-grid,:root:not([data-theme=light]) .context-chart .gridline{stroke:var(--line)}
+:root:not([data-theme=light]) .chart-line{stroke:var(--gold)}
+:root:not([data-theme=light]) .chart-fill{fill:var(--soft)}
+:root:not([data-theme=light]) .canvas-header,:root:not([data-theme=light]) .canvas-controls{background:var(--paper)}
+:root:not([data-theme=light]) #viewport{background-color:var(--paper);background-image:radial-gradient(circle,rgba(225,205,172,.32) .65px,transparent .9px)}
+:root:not([data-theme=light]) .app-brand img,:root:not([data-theme=light]) .mobile-brand img,:root:not([data-theme=light]) .canvas-brand img,:root:not([data-theme=light]) .plant-art{filter:url(#forest-ink)}
+:root:not([data-theme=light]) .welcome-art>video{mix-blend-mode:normal;filter:brightness(1.012) url(#forest-film)}
+:root:not([data-theme=light]) .accent-graphite{--avatar-bg:#34412a;--avatar-ink:#e1cdac}
+:root:not([data-theme=light]) .accent-sage{--avatar-bg:#40512d;--avatar-ink:#e1cdac}
+:root:not([data-theme=light]) .accent-clay{--avatar-bg:#4b432a;--avatar-ink:#e1cdac}
+:root:not([data-theme=light]) .accent-blue{--avatar-bg:#625332;--avatar-ink:#e1cdac}
+:root:not([data-theme=light]) .board-card li,:root:not([data-theme=light]) .app-map span,:root:not([data-theme=light]) .tool-separator,:root:not([data-theme=light]) .canvas-brand span{border-color:var(--line)}
+:root:not([data-theme=light]) .board-name h2>span,:root:not([data-theme=light]) .app-map span,:root:not([data-theme=light]) .people-icons span,:root:not([data-theme=light]) .stage-list span{color:var(--muted)}
+:root:not([data-theme=light]) .board-card li>b{color:var(--ink)}
+:root:not([data-theme=light]) .people-switches button{color:var(--muted)}
+:root:not([data-theme=light]) .people-switches button.active{color:var(--ink);border-color:var(--ink)}
+:root:not([data-theme=light]) .business-loop{color:var(--ink)}
+:root:not([data-theme=light]) .business-loop i,:root:not([data-theme=light]) .mini-pipeline i:after{background:var(--gold)}
+:root:not([data-theme=light]) .canvas-header .icon,:root:not([data-theme=light]) .mini-pipeline .icon,:root:not([data-theme=light]) .people-icons>.icon{filter:url(#forest-ink)}
+

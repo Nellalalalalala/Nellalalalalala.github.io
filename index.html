@@ -1,21 +1,46 @@
 <!doctype html>
-<html lang="ru">
+<html lang="de" data-theme="dark">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Nell — проекты</title>
-  <meta name="description" content="Проекты Nell: русский перевод GARAGE: Bad Dream Adventure, историческая библиотека и исследования по источникам.">
-  <link rel="stylesheet" href="assets/site.css">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1b2716">
+  <meta name="description" content="BonsaiPilot — Dein Bonsai. Dein digitaler Pflegepilot. Eine interaktive Konzeptpräsentation über Bonsai-Pflege, digitale Baumprofile, KI, AR und eine langfristige Entwicklung.">
+  <title>BonsaiPilot — Dein Bonsai. Dein digitaler Pflegepilot.</title>
+  <link rel="icon" href="/assets/bonsaipilot-mark-gold.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/StudioDot.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="v2.css">
+  <link rel="stylesheet" href="nothing.css">
+  <link rel="stylesheet" href="revision.css">
+  <script src="app.js?v=2d8315771006" defer></script>
+  <script src="cinema.js?v=2d8315771006" defer></script>
+  <script src="vendor/qrcode.js" defer></script>
+  <script src="shared/qr.js" defer></script>
+  <script src="experience.js?v=2d8315771006" defer></script>
+<link rel="stylesheet" href="/palette.css?v=a9b73330bf2e">
+<link rel="stylesheet" href="/forest.css?v=6193bb90e573">
+<link rel="stylesheet" href="/nature.css?v=67ccc7e47628">
 </head>
-<body>
-  <header><a class="brand" href="./">NELL</a><nav aria-label="Разделы"><a href="garage-ru/">Перевод GARAGE</a><a href="workers-opposition-library/">Библиотека</a></nav></header>
-  <main>
-    <section class="hero"><div class="eyebrow">Переводы и проекты</div><h1>Переводы игр.<br>Документы и источники.</h1><p class="lead">Архивы, инструкции и источники — на отдельных страницах проектов.</p></section>
-    <div class="grid">
-      <a class="card project-link" href="garage-ru/"><div class="eyebrow">Перевод игры · Windows</div><h2>GARAGE:<br>Bad Dream Adventure</h2><p>Русские диалоги, документы и интерфейс. Архив перевода, установка в два клика и возврат оригинала.</p><p class="small">Открыть страницу →</p></a>
-      <a class="card project-link" href="workers-opposition-library/"><div class="eyebrow">Библиотека</div><h2>Рабочая оппозиция</h2><p>Документы, исследования и библиографические материалы.</p><p class="small">Перейти в библиотеку →</p></a>
-      <a class="card project-link" href="ussr-suicides/"><div class="eyebrow">Историческая статистика · 1922–1991</div><h2>Самоубийства в СССР</h2><p>Архивные таблицы, расчёты и источники. Что известно о числе зарегистрированных смертей и почему полный итог остаётся неустановленным.</p><p class="small">Открыть исследование →</p></a>
-    </div>
-  </main>
-  <footer><a href="https://github.com/Nellalalalalala">GitHub</a> Nell · 2026</footer>
-</body>
-</html>
+<body><svg width="0" height="0" aria-hidden="true" style="position:absolute;pointer-events:none"><defs><filter id="forest-film" color-interpolation-filters="sRGB"><feColorMatrix values="0 0 0 0 .88235 0 0 0 0 .80392 0 0 0 0 .67451 -.2126 -.7152 -.0722 0 1"/><feComposite in2="SourceAlpha" operator="in"/></filter><filter id="forest-ink"><feFlood flood-color="#e1cdac"/><feComposite in2="SourceAlpha" operator="in"/></filter><filter id="forest-dark"><feFlood flood-color="#1b2716"/><feComposite in2="SourceAlpha" operator="in"/></filter></defs></svg>
+  <div class="nature-backdrop" aria-hidden="true"><img class="nature-tree" src="/assets/bonsai-silhouette.svg" alt=""></div>
+  <div id="loader" class="loader" role="status" aria-label="Präsentation wird geladen">
+    <canvas id="loadingMatrix" aria-hidden="true"></canvas>
+    <div class="loader-top"><span>BONSAIPILOT / LIVING SYSTEM</span><span>INITIALISIERUNG</span></div>
+    <div class="loader-center"><div class="loader-orbit"></div><img src="assets/bonsaipilot-mark.svg" alt=""><div class="dot-font">BONSAIPILOT</div><p id="loadingLabel">Ein neuer Weg beginnt.</p></div>
+    <div class="loader-bottom"><span id="loadingPercent" class="dot-font">00</span><div class="loader-track"><i id="loadingBar"></i></div><span>NATUR. IM EINKLANG.</span><button id="skipIntro">Intro überspringen</button></div>
+  </div>
+  <header class="topbar">
+    <a href="#auftakt" class="brand" aria-label="BonsaiPilot Startseite"><span class="brand-mark"><img src="assets/bonsaipilot-mark.svg" alt=""></span> BONSAIPILOT<span class="brand-bracket">( )</span></a>
+    <span class="top-caption">PFLEGEN. LERNEN. GESTALTEN.</span>
+    <div class="top-actions"><span class="top-links"><a href="/app/">App-Demo</a><a href="/canvas/">Canvas</a></span><button id="sourcesButton">Quellen</button><button id="menuButton" aria-label="Kapitelübersicht öffnen" aria-expanded="false"><span class="menu-icon">☷</span></button></div>
+  </header>
+  <main id="stage" aria-label="Präsentation"></main>
+  <nav id="chapterRail" aria-label="Kapitel"></nav>
+  <footer class="controls">
+    <div class="chapter-readout"><span id="pageNumber" class="dot-font">01</span><span class="divider">/</span><span id="total">13</span><span id="chapterName">AUFTAKT</span></div>
+    <div class="playback"><button id="autoButton" aria-pressed="false"><span id="playIcon">▷</span><span id="autoLabel">Autoplay</span></button><button id="motionButton" aria-pressed="false" title="Animationen pausieren">Animation pausieren</button><button id="chapterAnimationButton" aria-label="Themenanimation wiederholen" title="Themenanimation wiederholen">Szene</button><button id="fullscreenButton" aria-label="Vollbild umschalten" title="Vollbild (F)">⛶</button></div>
+    <div class="paging"><button id="prevButton" aria-label="Vorheriges Kapitel">Zurück</button><button id="nextButton">Weiter <span class="key-hint">↵</span></button></div>
+    <div class="deck-track"><span id="deckProgress"></span><span id="autoProgress"></span></div>
+  </footer>
+  <dialog id="menuDialog"><div class="dialog-head"><span class="eyebrow">DIE PRÄSENTATION</span><button data-close aria-label="Schließen">✕</button></div><h2>Ein Weg zu mehr Grün.</h2><div id="chapterMenu"></div><p class="dialog-note">Tastatur: ← → navigieren · Space / Enter nächste Folie · F Vollbild · Esc schließen</p></dialog>
+  <dialog id="sourcesDialog"><div class="dialog-head"><span class="eyebrow">RECHERCHE / 23.11.2026</span><button data-close aria-label="Schließen">✕</button></div><h2>Idee trifft Evidenz.</h2><p>Grundlage: „Businessplan_DeinStart-up.pdf“, Abschnitte I–VIII, Fragen 1–27, und drei Bildanhänge. Der Validierungsanhang ist ein fiktives Muster; er enthält keine erhobenen Kundenantworten. Kosten und Umsätze sind Planwerte, mögliche Partner noch keine bestätigten Kooperationen.</p><div class="logo-downloads"><span class="eyebrow">BONSAIPILOT / CMATRIX-BONSAI</span><a href="assets/bonsaipilot-logo.svg" download>Logo als SVG</a><a href="assets/bonsaipilot-logo.png" download>Logo als PNG</a><a href="assets/bonsai-matrix-9f307e58ee10.mp4" download>Animation als MP4</a></div><div id="sourceList"></div><p class="dialog-note">Noch kein belegter Produkt-Markt-Fit. Fotoanalyse, digitaler Zwilling, AR, Raumscan und optionale Sensoranbindung sind das Entwicklungsziel.</p></dialog>
+  <div id="announcer" class="sr-only" aria-live="polite"></div>
+</body></html>

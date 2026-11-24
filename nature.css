@@ -1,0 +1,10 @@
+html:has(#stage){background-image:none!important}
+body:has(#stage){isolation:isolate;background-image:none!important}
+.nature-backdrop{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden}
+.nature-tree{position:absolute;right:5.5vw;bottom:9vh;width:clamp(190px,25vw,365px);height:auto;opacity:.075;transform-origin:50% 94%;animation:nature-sway 13s ease-in-out infinite;will-change:transform}
+body:has(#stage)::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle,rgba(225,205,172,.38) .65px,transparent .95px) 32px 32px/94px 94px}
+body:has(#stage) .chapter-prelude{background-color:transparent!important;background-image:none!important}
+body.motion-paused .nature-tree{animation-play-state:paused}
+@keyframes nature-sway{0%,100%{transform:rotate(-1.4deg) skewX(-.5deg)}50%{transform:rotate(1.4deg) skewX(.5deg)}}
+@media(max-width:620px){.nature-tree{right:-15px;bottom:13vh;width:205px;opacity:.065}}
+@media(prefers-reduced-motion:reduce){.nature-tree{animation:none;will-change:auto}}

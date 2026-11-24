@@ -1,0 +1,121 @@
+[
+  {
+    "id": "plan",
+    "name": "Businessplan Dein Start-up · BonsaiPilot",
+    "label": "Projektgrundlage / 23.11.2026",
+    "url": null,
+    "note": "Neue Projektunterlage, Abschnitte I–VIII, Fragen 1–27, sowie drei Bildanhänge. Planwerte, Partnerwünsche und Funktionsziele sind keine bereits erreichten Ergebnisse. Der Validierungsanhang enthält ausdrücklich erfundene Musterantworten."
+  },
+  {
+    "id": "bonsai",
+    "name": "Bonsai Empire · Pflege und Standort",
+    "label": "Fachwissen / Bonsai",
+    "url": "https://www.bonsaiempire.com/basics/bonsai-care",
+    "note": "Art, Standort, Substrat und Jahreszeit bestimmen die Pflege. Die sechs Artenguides der App verlinken ihre jeweilige Fachquelle."
+  },
+  {
+    "id": "rhs",
+    "name": "Royal Horticultural Society",
+    "label": "Problem / ergänzende Quelle aus dem Plan",
+    "url": "https://www.rhs.org.uk/plants/types/houseplants/how-to-help-a-poorly-houseplant",
+    "note": "Allgemeine Zimmerpflanzenpflege: Gießfehler und Lichtprobleme. Kein spezifischer Bonsai- oder Nachfragebeleg."
+  },
+  {
+    "id": "dguv",
+    "name": "DGUV · Barometer Arbeitswelt 2025",
+    "label": "Kontext / ergänzende Quelle aus dem Plan",
+    "url": "https://www.dguv.de/de/mediencenter/pm/dguv-barometer-arbeitswelt-2025.jsp",
+    "note": "2.018 Erwerbstätige; 51 % berichten von höherem Zeitdruck. Der neue Marktansatz ist Bonsai-Interesse, nicht die Zahl der Menschen im Homeoffice."
+  },
+  {
+    "id": "destatis",
+    "name": "Destatis · Bevölkerungsstand und Altersstruktur",
+    "label": "Zielgruppenbasis",
+    "url": "https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Bevoelkerungsstand/_inhalt.html",
+    "note": "Altersgruppen lassen sich amtlich einordnen. Daraus folgt weder die Zahl der Bonsai-Besitzer noch ein erreichbarer zahlender Kundenstamm."
+  },
+  {
+    "id": "ivg",
+    "name": "Industrieverband Garten",
+    "label": "Branchenumfeld",
+    "url": "https://ivg.org/",
+    "note": "Gartenbranche als Umfeld. Im Businessplan ist kein belastbares Marktvolumen speziell für Bonsai-Apps ausgewiesen."
+  },
+  {
+    "id": "nikki",
+    "name": "BonsaiNikki",
+    "label": "Wettbewerb / Anbieterangaben",
+    "url": "https://www.bonsainikki.io/",
+    "note": "Baumtagebuch, Fotoanalysen und KI-basierte Pflege-/Gestaltungshilfen. Ein Teil der vorgesehenen Funktionen existiert bereits im Wettbewerb."
+  },
+  {
+    "id": "care",
+    "name": "Bonsai Care · Bonsai Empire",
+    "label": "Wettbewerb / Anbieterangaben",
+    "url": "https://www.bonsaiempire.com/blog/bonsai-app",
+    "note": "Baumprofile, Fotos und saisonale Erinnerungen. Andere ähnlich benannte Apps werden damit nicht gleichgesetzt."
+  },
+  {
+    "id": "bonsaiku",
+    "name": "Bonsaiku · Develak",
+    "label": "Wettbewerb / Anbieterangaben",
+    "url": "https://develak.com/apps/bonsaiku/",
+    "note": "Pflegejournal und saisonale Planung. Die im Plan genannten Produktnamen und Namensüberschneidungen sind getrennt zu betrachten."
+  },
+  {
+    "id": "planta",
+    "name": "Planta",
+    "label": "Allgemeine Pflanzen-App",
+    "url": "https://getplanta.com/",
+    "note": "Allgemeine Pflegepläne und Erinnerungen; kein Nachweis eines Alleinstellungsmerkmals von BonsaiPilot."
+  },
+  {
+    "id": "twins",
+    "name": "Digital Twins in Agriculture: A Review of Recent Progress and Open Issues",
+    "label": "Forschung / Wang, 2024",
+    "url": "https://www.mdpi.com/2079-9292/13/11/2209",
+    "note": "Übersichtsarbeit zu digitalen Zwillingen in der Landwirtschaft. Sie belegt weder eine fertige Bonsai-Rekonstruktion noch verlässliche mehrjährige Wachstumsprognosen dieses Projekts."
+  },
+  {
+    "id": "ai",
+    "name": "Using Deep Learning for Image-Based Plant Disease Detection",
+    "label": "Forschung / Mohanty et al., 2016",
+    "url": "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2016.01419/full",
+    "note": "Bildklassifikation unter kontrollierten Bedingungen. Für reale Bonsai-Fotos sind ein eigener Datensatz, fachliche Prüfung und Validierung notwendig."
+  },
+  {
+    "id": "ar",
+    "name": "Apple Developer · ARKit",
+    "label": "Technische Grundlage",
+    "url": "https://developer.apple.com/documentation/arkit",
+    "note": "Werkzeuge für Augmented Reality. Die Browser-Demo zeigt einen Gestaltungsvorschlag; sie implementiert keine native ARKit-App."
+  },
+  {
+    "id": "fulda",
+    "name": "Hochschule Fulda · Angewandte Informatik",
+    "label": "Möglicher Partner laut Plan",
+    "url": "https://origin.hs-fulda.de/angewandte-informatik/kooperationen",
+    "note": "Kooperationsmöglichkeiten im Fachbereich. Es ist keine bereits vereinbarte Kooperation mit BonsaiPilot belegt."
+  },
+  {
+    "id": "toolstage",
+    "name": "ToolStage Software Engineering",
+    "label": "Möglicher Partner laut Plan",
+    "url": "https://www.toolstage.de/",
+    "note": "Software-, Web- und App-Entwicklung. Als möglicher Entwicklungspartner genannt, nicht als bestehender Auftragnehmer."
+  },
+  {
+    "id": "innoge",
+    "name": "InnoGE",
+    "label": "Möglicher Partner laut Plan",
+    "url": "https://innoge.de/",
+    "note": "Softwareentwicklung und KI-Dienstleistungen. Keine bestehende Zusammenarbeit mit BonsaiPilot behauptet."
+  },
+  {
+    "id": "leinweber",
+    "name": "Baumschule Georg Leinweber",
+    "label": "Möglicher Partner laut Plan",
+    "url": "https://www.baumschule-leinweber.de/",
+    "note": "Pflanzenfachbetrieb in Niederkalbach. Als möglicher Partner für Fachwissen und Tests genannt; keine bestätigte Bonsai-Spezialisierung oder Partnerschaft behauptet."
+  }
+]

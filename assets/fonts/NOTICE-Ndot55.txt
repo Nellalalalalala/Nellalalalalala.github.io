@@ -1,0 +1,8 @@
+Ndot 55 — Copyright © Nothing. All rights reserved.
+Original, unmodified Ndot55-Regular.otf, sourced from:
+https://github.com/xeji01/nothingfont/blob/main/fonts/Ndot55-Regular.otf
+The font's embedded name/license records are retained unchanged.
+
+Cyrillic in the Ndot55 / Ndot Cyrillic CSS families is supplied by Studio Dot,
+an original MIT-licensed circular-matrix font. Ndot55.otf is unmodified.
+This is a composite family, not an official Ndot57 font.

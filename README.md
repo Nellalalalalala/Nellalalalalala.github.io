@@ -1,25 +1,25 @@
-# Страницы проектов Nell
+# BonsaiPilot
 
-https://nellalalalalala.github.io/
+- [Präsentation](https://nellalalalalala.github.io/)
+- [Präsentations-Canvas](https://nellalalalalala.github.io/canvas/)
+- [Interaktive App-Demo](https://nellalalalalala.github.io/app/)
 
-Самоубийства в СССР, 1922–1991: источники и воспроизводимый расчёт:
-https://nellalalalalala.github.io/ussr-suicides/
+Statische Veröffentlichung für GitHub Pages: `main`, Verzeichnis `/`.
+Die drei Ansichten benötigen keinen Build-Schritt. Profil und Spielstände bleiben im Browser des jeweiligen Geräts.
 
-Данные, библиография, методика и скрипты — `ussr-suicides/`.
-Полный итог не установлен; опубликованные и расчётные частичные суммы
-отмечены отдельно. Пересчитать: `python3 ussr-suicides/recalculate.py`.
-Пересобрать страницу и контрольные суммы: `python3 ussr-suicides/build_page.py`.
+## Gemini-Co-Pilot
 
-Русский перевод GARAGE: Bad Dream Adventure:
-https://nellalalalalala.github.io/garage-ru/
+Nur der Chat verwendet ein separates API auf dem PC über Cloudflare HTTPS.
+Der API-Schlüssel bleibt auf dem PC und ist in diesem Repository nicht enthalten.
+Ist der PC oder Tunnel offline, funktionieren die Präsentation, der Canvas und das Baum-Spiel weiter.
+Für die Verbindung werden signierte App-Sitzungen im Arbeitsspeicher der Seite verwendet, keine Drittanbieter-Cookies.
+Bei einem Wechsel der Quick-Tunnel-Adresse muss `app/api-config.json` auf die neue HTTPS-Adresse aktualisiert werden.
 
-Готовый архив распространяется через GitHub Releases; на сайте находятся
-инструкция, сведения о совместимости и ссылки скачивания. Сохранения, исходная
-игра, локальные инструменты сборки и тестовые DLL в репозиторий не включаются.
+## Aktualisieren
 
-Установщик Windows — `tools/garage-windows/`. Проверка Windows PowerShell 5.1
-запускается GitHub Actions. Ручной запуск workflow с тегом релиза дополнительно
-распаковывает готовый ZIP на Windows и проверяет все файлы по SHA-256.
+Die Quelle befindet sich auf dem PC in `florevia-presentation/public`.
+`scripts/export_github_pages.py` im Quellprojekt exportiert in ein leeres Verzeichnis und nimmt die Backend-Adresse über `--backend` entgegen.
+Keine privaten Konfigurationen, Serverdateien oder Laufzeitdaten mit veröffentlichen.
+Die vorherige Website bleibt über die Git-Historie wiederherstellbar.
 
-Историческая библиотека остаётся отдельным проектом:
-https://nellalalalalala.github.io/workers-opposition-library/
+Fotos und Schriften: Lizenzangaben unter `assets/photos/`, `assets/fonts/` und im Bildnachweis der App.
