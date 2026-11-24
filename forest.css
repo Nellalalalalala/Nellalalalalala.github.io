@@ -1,4 +1,8 @@
 /* Primary Forest & Gold palette approved from the standalone experiment. */
+html:root .board-hero .hero-loop{background:transparent}
+.hero-loop>img{display:block;width:100%;height:100%;object-fit:contain;transform-origin:50% 86%;animation:canvas-logo-breathe 9s ease-in-out infinite}
+@keyframes canvas-logo-breathe{0%,100%{opacity:.8;transform:translateY(2px) scale(.98)}50%{opacity:1;transform:translateY(-2px) scale(1)}}
+@media(prefers-reduced-motion:reduce){.hero-loop>img{animation:none}}
 :root:not([data-theme=light]){--paper:#1b2716;--bg:#1b2716;--surface:#22301c;--soft:#2b3820;--ink:#e1cdac;--muted:#bca985;--line:#535d3d;--green:#e1cdac;--accent:#e1cdac;--accent-soft:#3b4527;--red:#d8c3a1;--warning:#e1cdac;--warning-bg:#434325;--gold:#e1cdac;--gold-ink:#e1cdac;--dot:rgba(225,205,172,.2);color-scheme:dark}
 :root:not([data-theme=light]),:root:not([data-theme=light]) body,:root:not([data-theme=light]) body:not(:has(.app-shell)),:root:not([data-theme=light]) .loader,:root:not([data-theme=light]) .chapter-prelude{background-color:var(--paper);background-image:radial-gradient(circle,rgba(225,205,172,.38) .65px,transparent .95px)}
 :root:not([data-theme=light]) .topbar,:root:not([data-theme=light]) .controls{background:var(--paper)}
